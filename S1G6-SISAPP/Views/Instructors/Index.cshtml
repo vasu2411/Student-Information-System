@@ -1,0 +1,64 @@
+﻿@model IEnumerable<S1G6_SISAPP.Models.Instructor>
+
+@{
+    ViewBag.Title = "Instructor";
+}
+
+<h2>Instructor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Instructors", FormMethod.Get))
+{
+    <p>
+        Find by name : @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+        | @Html.ActionLink("Back to List", "Index")
+
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("InstructorFirstName", "Index", new { sortBy = ViewBag.SortName })
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstructorLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstructorPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstructorHireDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorHireDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.InstructorID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.InstructorID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.InstructorID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,1948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CourseName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Instructor">
+    <Key>
+      <PropertyRef Name="InstructorID" />
+    </Key>
+    <Property Name="InstructorID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="InstructorFirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="InstructorLastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="InstructorPhone" Type="int" Nullable="false" />
+    <Property Name="InstructorHireDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="varchar" MaxLength="10" />
+    <Property Name="CourseID" Type="varchar" MaxLength="10" />
+    <Property Name="TermID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="StudentFirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StudentLastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StudentEnrollment" Type="bigint" Nullable="false" />
+    <Property Name="StudentPhone" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudyTerm">
+    <Key>
+      <PropertyRef Name="TermID" />
+    </Key>
+    <Property Name="TermID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TermName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TermStartDate" Type="date" Nullable="false" />
+    <Property Name="TermEndDate" Type="date" Nullable="false" />
+    <Property Name="TermYear" Type="int" Nullable="false" />
+    <Property Name="TermSeason" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeachingAssignments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstructorID" Type="varchar" MaxLength="10" />
+    <Property Name="CourseID" Type="varchar" MaxLength="10" />
+    <Property Name="TermID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblAttribute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Source_ID" Type="int" />
+    <Property Name="Source_LastChgTS" Type="varbinary" MaxLength="8" />
+    <Property Name="Entity_ID" Type="int" Nullable="false" />
+    <Property Name="MemberType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="TableColumn" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="AttributeType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="DataType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="DataTypeInformation" Type="int" />
+    <Property Name="InputMask_ID" Type="int" Nullable="false" />
+    <Property Name="DisplayWidth" Type="int" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="DomainEntity_ID" Type="int" />
+    <Property Name="ChangeTrackingGroup" Type="int" Nullable="false" />
+    <Property Name="FilterParentAttribute_ID" Type="int" />
+    <Property Name="FilterHierarchyDetail_ID" Type="int" />
+    <Property Name="IsCode" Type="bit" Nullable="false" />
+    <Property Name="IsName" Type="bit" Nullable="false" />
+    <Property Name="IsSystem" Type="bit" Nullable="false" />
+    <Property Name="IsReadOnly" Type="bit" Nullable="false" />
+    <Property Name="IsRequired" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblAttributeGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Entity_ID" Type="int" Nullable="false" />
+    <Property Name="MemberType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="FreezeNameCode" Type="bit" Nullable="false" />
+    <Property Name="IsSystem" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblAttributeGroupDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AttributeGroup_ID" Type="int" Nullable="false" />
+    <Property Name="Attribute_ID" Type="int" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBRBusinessRule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="RuleConditionText" Type="nvarchar(max)" />
+    <Property Name="RuleActionText" Type="nvarchar(max)" />
+    <Property Name="RuleElseActionText" Type="nvarchar(max)" />
+    <Property Name="Entity_ID" Type="int" Nullable="false" />
+    <Property Name="MemberType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="Status_ID" Type="int" Nullable="false" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="NotificationGroupID" Type="int" />
+    <Property Name="NotificationUserID" Type="int" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBRItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BRLogicalOperatorGroup_ID" Type="int" Nullable="false" />
+    <Property Name="BRItemAppliesTo_ID" Type="int" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="ItemText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AnchorName" Type="nvarchar" MaxLength="250" />
+    <Property Name="AnchorAttributeType" Type="int" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBRItemProperties">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BRItem_ID" Type="int" Nullable="false" />
+    <Property Name="PropertyType_ID" Type="int" Nullable="false" />
+    <Property Name="PropertyName_ID" Type="int" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="999" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="IsLeftHandSide" Type="bit" Nullable="false" />
+    <Property Name="Parent_ID" Type="int" />
+    <Property Name="SuppressText" Type="bit" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBRItemTypeAppliesTo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BRItemType_ID" Type="int" Nullable="false" />
+    <Property Name="ApplyTo_ID" Type="int" Nullable="false" />
+    <Property Name="Sequence" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBRLogicalOperatorGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogicalOperator_ID" Type="int" />
+    <Property Name="Parent_ID" Type="int" />
+    <Property Name="BusinessRule_ID" Type="int" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBRStatusTransition">
+    <Key>
+      <PropertyRef Name="Action_ID" />
+      <PropertyRef Name="CurrentStatus_ID" />
+    </Key>
+    <Property Name="Action_ID" Type="int" Nullable="false" />
+    <Property Name="CurrentStatus_ID" Type="int" Nullable="false" />
+    <Property Name="NewStatus_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCodeGenInfo">
+    <Key>
+      <PropertyRef Name="EntityId" />
+    </Key>
+    <Property Name="EntityId" Type="int" Nullable="false" />
+    <Property Name="Seed" Type="int" Nullable="false" />
+    <Property Name="LargestCodeValue" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'S1G6-SISDB.mdm.tblDataQualityOperationsState' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblDataQualityOperationsState">
+    <Key>
+      <PropertyRef Name="CreateDTM" />
+    </Key>
+    <Property Name="CreateDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="OperationId" Type="uniqueidentifier" />
+    <Property Name="SerializedOperation" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblDBErrors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Language_ID" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="tblDBUpgradeHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DBVersion" Type="int" Nullable="false" />
+    <Property Name="EnterUser" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDerivedHierarchy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Model_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AnchorNullRecursions" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDerivedHierarchyDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DerivedHierarchy_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ForeignParent_ID" Type="int" />
+    <Property Name="Foreign_ID" Type="int" />
+    <Property Name="ForeignType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="ManyToManyChildAttribute_ID" Type="int" />
+    <Property Name="Level_ID" Type="int" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEntity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Model_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="EntityTable" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="HierarchyTable" Type="nvarchar" MaxLength="128" />
+    <Property Name="HierarchyParentTable" Type="nvarchar" MaxLength="128" />
+    <Property Name="CollectionTable" Type="nvarchar" MaxLength="128" />
+    <Property Name="CollectionMemberTable" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsBase" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="StagingBase" Type="nvarchar" MaxLength="60" />
+    <Property Name="StagingLeafName" Type="nvarchar" MaxLength="65" StoreGeneratedPattern="Computed" />
+    <Property Name="StagingConsolidatedName" Type="nvarchar" MaxLength="73" StoreGeneratedPattern="Computed" />
+    <Property Name="StagingRelationshipName" Type="nvarchar" MaxLength="73" StoreGeneratedPattern="Computed" />
+    <Property Name="DataCompression" Type="tinyint" Nullable="false" />
+    <Property Name="TransactionLogType" Type="tinyint" Nullable="false" />
+    <Property Name="RequireApproval" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblErrorCodesMapping">
+    <Key>
+      <PropertyRef Name="Bitmask" />
+    </Key>
+    <Property Name="Bitmask" Type="int" Nullable="false" />
+    <Property Name="UniqueErrorCode" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEvent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Version_ID" Type="int" />
+    <Property Name="Entity_ID" Type="int" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EventStatus_ID" Type="tinyint" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="ErrorMsg" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblExternalSystem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Status_ID" Type="tinyint" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblFile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Source_ID" Type="int" />
+    <Property Name="Source_LastChgTS" Type="varbinary" MaxLength="8" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="FileContentType" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="FileContent" Type="varbinary(max)" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblHierarchy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Entity_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsMandatory" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblIndex">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Entity_ID" Type="int" Nullable="false" />
+    <Property Name="SysIndex_ID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsUnique" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ListName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Seq" Type="int" Nullable="false" />
+    <Property Name="ListOption" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="OptionID" Type="int" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="Group_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblListRelationship">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentListCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Parent_ID" Type="int" Nullable="false" />
+    <Property Name="ChildListCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Child_ID" Type="int" Nullable="false" />
+    <Property Name="ListRelationshipType_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblListRelationshipType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLocalizedStrings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LanguageCode" Type="int" Nullable="false" />
+    <Property Name="ResourceName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LocalizedValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblModel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="LogRetentionDays" Type="int" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblModelVersion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Model_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status_ID" Type="tinyint" Nullable="false" />
+    <Property Name="Display_ID" Type="int" Nullable="false" />
+    <Property Name="VersionFlag_ID" Type="int" />
+    <Property Name="AsOfVersion_ID" Type="int" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblModelVersionFlag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Model_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status_ID" Type="tinyint" Nullable="false" />
+    <Property Name="CommittedOnly_ID" Type="tinyint" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblNotificationQueue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NotificationType_ID" Type="int" Nullable="false" />
+    <Property Name="Version_ID" Type="int" />
+    <Property Name="Model_ID" Type="int" />
+    <Property Name="Entity_ID" Type="int" />
+    <Property Name="Member_ID" Type="int" />
+    <Property Name="MemberType_ID" Type="tinyint" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRBusinessRule_ID" Type="int" />
+    <Property Name="PriorityRank" Type="nvarchar" MaxLength="255" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="DueDTM" Type="datetime2" Precision="3" />
+    <Property Name="SentDTM" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblNotificationUsers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Notification_ID" Type="int" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSecurityAccessControl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrincipalType_ID" Type="int" Nullable="false" />
+    <Property Name="Principal_ID" Type="int" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="110" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSecurityObject">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="ViewName" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSecurityPrivilege">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblSecurityPrivilegeFunctional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSecurityRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="115" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSecurityRoleAccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+    <Property Name="Privilege_ID" Type="int" Nullable="false" />
+    <Property Name="AccessPermission" Type="tinyint" Nullable="false" />
+    <Property Name="Model_ID" Type="int" Nullable="false" />
+    <Property Name="Securable_ID" Type="int" Nullable="false" />
+    <Property Name="Object_ID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSecurityRoleAccessFunctional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+    <Property Name="FunctionalPrivilege_ID" Type="tinyint" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSecurityRoleAccessMember">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+    <Property Name="Privilege_ID" Type="int" Nullable="false" />
+    <Property Name="AccessPermission" Type="tinyint" Nullable="false" />
+    <Property Name="Version_ID" Type="int" Nullable="false" />
+    <Property Name="Entity_ID" Type="int" Nullable="false" />
+    <Property Name="HierarchyType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="ExplicitHierarchy_ID" Type="int" />
+    <Property Name="DerivedHierarchy_ID" Type="int" />
+    <Property Name="Hierarchy_ID" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="MemberType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="Member_ID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsInitialized" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblStgBatch">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OriginalBatch_ID" Type="int" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Entity_ID" Type="int" />
+    <Property Name="MemberType_ID" Type="tinyint" />
+    <Property Name="BatchTag" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExternalSystem_ID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Version_ID" Type="int" Nullable="false" />
+    <Property Name="TotalMemberCount" Type="int" />
+    <Property Name="ErrorMemberCount" Type="int" />
+    <Property Name="TotalMemberAttributeCount" Type="int" />
+    <Property Name="ErrorMemberAttributeCount" Type="int" />
+    <Property Name="TotalMemberRelationshipCount" Type="int" />
+    <Property Name="ErrorMemberRelationshipCount" Type="int" />
+    <Property Name="Status_ID" Type="tinyint" Nullable="false" />
+    <Property Name="LastRunStartDTM" Type="datetime" />
+    <Property Name="LastRunStartUserID" Type="int" />
+    <Property Name="LastRunEndDTM" Type="datetime" />
+    <Property Name="LastRunEndUserID" Type="int" />
+    <Property Name="LastClearedDTM" Type="datetime" />
+    <Property Name="LastClearedUserID" Type="int" />
+    <Property Name="EnterDTM" Type="datetime" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblStgErrorDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Batch_ID" Type="int" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="250" />
+    <Property Name="AttributeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AttributeValue" Type="nvarchar" MaxLength="2000" />
+    <Property Name="UniqueErrorCode" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSubscriptionView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Entity_ID" Type="int" />
+    <Property Name="Model_ID" Type="int" Nullable="false" />
+    <Property Name="DerivedHierarchy_ID" Type="int" />
+    <Property Name="ViewFormat_ID" Type="int" Nullable="false" />
+    <Property Name="ModelVersion_ID" Type="int" />
+    <Property Name="ModelVersionFlag_ID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Levels" Type="int" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="IncludeSoftDeletedMembers" Type="bit" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" />
+    <Property Name="EnterVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" />
+    <Property Name="LastChgVersionID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSyncRelationship">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceVersion_ID" Type="int" Nullable="false" />
+    <Property Name="SourceEntity_ID" Type="int" Nullable="false" />
+    <Property Name="TargetVersion_ID" Type="int" Nullable="false" />
+    <Property Name="TargetEntity_ID" Type="int" Nullable="false" />
+    <Property Name="TargetEntityNameIsAliased" Type="bit" Nullable="false" />
+    <Property Name="RefreshFrequencyInHours" Type="int" />
+    <Property Name="LastSuccessfulSyncDTM" Type="datetime2" Precision="7" />
+    <Property Name="LastSuccessfulSyncTimestamp" Type="varbinary" MaxLength="8" />
+    <Property Name="LastSyncAttemptDTM" Type="datetime2" Precision="7" />
+    <Property Name="LastSyncAttemptStatus" Type="tinyint" Nullable="false" />
+    <Property Name="LastSyncAttemptErrorInfo" Type="nvarchar(max)" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgTS" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSystem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SchemaVersion" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="LastChgUserID" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSystemSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="SettingName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SettingValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="SettingType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="DataType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="MinValue" Type="nvarchar" MaxLength="200" />
+    <Property Name="MaxValue" Type="nvarchar" MaxLength="200" />
+    <Property Name="ListCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnterDTM" Type="datetime" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SystemSettingGroup_ID" Type="int" Nullable="false" />
+    <Property Name="DisplaySequence" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSystemSettingGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="DisplaySequence" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Status_ID" Type="tinyint" Nullable="false" />
+    <Property Name="SID" Type="nvarchar" MaxLength="250" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastLoginDTM" Type="datetime2" Precision="3" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserGroupType_ID" Type="tinyint" Nullable="false" />
+    <Property Name="Status_ID" Type="tinyint" Nullable="false" />
+    <Property Name="SID" Type="nvarchar" MaxLength="250" />
+    <Property Name="Name" Type="nvarchar" MaxLength="355" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserGroupAssignment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserGroup_ID" Type="int" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserPreference">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="PreferenceName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PreferenceValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnterDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="EnterUserID" Type="int" Nullable="false" />
+    <Property Name="LastChgDTM" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="LastChgUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Course">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentID">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudyTerm">
+    <End Role="StudyTerm" Type="Self.StudyTerm" Multiplicity="0..1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudyTerm">
+        <PropertyRef Name="TermID" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttribute_tblAttribute_FilterParentAttribute_ID">
+    <End Role="tblAttribute" Type="Self.tblAttribute" Multiplicity="0..1" />
+    <End Role="tblAttribute1" Type="Self.tblAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAttribute">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttribute1">
+        <PropertyRef Name="FilterParentAttribute_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttribute_tblAttribute_Source_ID">
+    <End Role="tblAttribute" Type="Self.tblAttribute" Multiplicity="0..1" />
+    <End Role="tblAttribute1" Type="Self.tblAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAttribute">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttribute1">
+        <PropertyRef Name="Source_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttribute_tblDerivedHierarchyDetail_FilterHierarchyDetail_ID">
+    <End Role="tblDerivedHierarchyDetail" Type="Self.tblDerivedHierarchyDetail" Multiplicity="0..1" />
+    <End Role="tblAttribute" Type="Self.tblAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDerivedHierarchyDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttribute">
+        <PropertyRef Name="FilterHierarchyDetail_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttribute_tblEntity_DomainEntity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="0..1" />
+    <End Role="tblAttribute" Type="Self.tblAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttribute">
+        <PropertyRef Name="DomainEntity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttribute_tblEntity_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1" />
+    <End Role="tblAttribute" Type="Self.tblAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttribute">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttributeGroup_tblEntity_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblAttributeGroup" Type="Self.tblAttributeGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttributeGroup">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttributeGroupDetail_tblAttribute_AttributeGroup_ID">
+    <End Role="tblAttributeGroup" Type="Self.tblAttributeGroup" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblAttributeGroupDetail" Type="Self.tblAttributeGroupDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAttributeGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttributeGroupDetail">
+        <PropertyRef Name="AttributeGroup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAttributeGroupDetail_tblAttribute_AttributeID">
+    <End Role="tblAttribute" Type="Self.tblAttribute" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblAttributeGroupDetail" Type="Self.tblAttributeGroupDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAttribute">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAttributeGroupDetail">
+        <PropertyRef Name="Attribute_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblBRBusinessRule_tblEntity_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblBRBusinessRule" Type="Self.tblBRBusinessRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblBRBusinessRule">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblBRItem_tblBRItemTypeAppliesTo_BRItemAppliesTo_ID">
+    <End Role="tblBRItemTypeAppliesTo" Type="Self.tblBRItemTypeAppliesTo" Multiplicity="1" />
+    <End Role="tblBRItem" Type="Self.tblBRItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBRItemTypeAppliesTo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblBRItem">
+        <PropertyRef Name="BRItemAppliesTo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblBRItem_tblLogicalOperatorGroup_BRLogicalOperatorGroup_ID">
+    <End Role="tblBRLogicalOperatorGroup" Type="Self.tblBRLogicalOperatorGroup" Multiplicity="1" />
+    <End Role="tblBRItem" Type="Self.tblBRItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBRLogicalOperatorGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblBRItem">
+        <PropertyRef Name="BRLogicalOperatorGroup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblBRItemProperties_tblBRItem_BRItem_ID">
+    <End Role="tblBRItem" Type="Self.tblBRItem" Multiplicity="1" />
+    <End Role="tblBRItemProperties" Type="Self.tblBRItemProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBRItem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblBRItemProperties">
+        <PropertyRef Name="BRItem_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblBRItemTypeAppliesTo_tblListRelationship_ApplyTo_ID">
+    <End Role="tblListRelationship" Type="Self.tblListRelationship" Multiplicity="1" />
+    <End Role="tblBRItemTypeAppliesTo" Type="Self.tblBRItemTypeAppliesTo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblListRelationship">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblBRItemTypeAppliesTo">
+        <PropertyRef Name="ApplyTo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblBRLogicalOperatorGroup_tblBRBusinessRule_BusinessRule_ID">
+    <End Role="tblBRBusinessRule" Type="Self.tblBRBusinessRule" Multiplicity="1" />
+    <End Role="tblBRLogicalOperatorGroup" Type="Self.tblBRLogicalOperatorGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBRBusinessRule">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblBRLogicalOperatorGroup">
+        <PropertyRef Name="BusinessRule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCodeGenInfo_tblEntity">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1" />
+    <End Role="tblCodeGenInfo" Type="Self.tblCodeGenInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblCodeGenInfo">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblDerivedHierarchy_tblModel_Model_ID">
+    <End Role="tblModel" Type="Self.tblModel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblDerivedHierarchy" Type="Self.tblDerivedHierarchy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblDerivedHierarchy">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblDerivedHierarchyDetail_ManyToManyChildAttribute_ID_tblAttribute_ID">
+    <End Role="tblAttribute" Type="Self.tblAttribute" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblDerivedHierarchyDetail" Type="Self.tblDerivedHierarchyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAttribute">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblDerivedHierarchyDetail">
+        <PropertyRef Name="ManyToManyChildAttribute_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblDerivedHierarchyDetail_tblDerivedHierarchy_DerivedHierarchy_ID">
+    <End Role="tblDerivedHierarchy" Type="Self.tblDerivedHierarchy" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblDerivedHierarchyDetail" Type="Self.tblDerivedHierarchyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDerivedHierarchy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblDerivedHierarchyDetail">
+        <PropertyRef Name="DerivedHierarchy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblEntity_tblModel_Model_ID">
+    <End Role="tblModel" Type="Self.tblModel" Multiplicity="1" />
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEntity">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblEvent_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblEvent" Type="Self.tblEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEvent">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblEvent_Version_ID">
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblEvent" Type="Self.tblEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModelVersion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEvent">
+        <PropertyRef Name="Version_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblFile_tblFile_Source_ID">
+    <End Role="tblFile" Type="Self.tblFile" Multiplicity="0..1" />
+    <End Role="tblFile1" Type="Self.tblFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblFile1">
+        <PropertyRef Name="Source_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblHierarchy_tblEntity_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1" />
+    <End Role="tblHierarchy" Type="Self.tblHierarchy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblHierarchy">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblIndex_tblEntity_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1" />
+    <End Role="tblIndex" Type="Self.tblIndex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblIndex">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblListRelationship_tblListRelationshipType_ListRelationshipType_ID">
+    <End Role="tblListRelationshipType" Type="Self.tblListRelationshipType" Multiplicity="1" />
+    <End Role="tblListRelationship" Type="Self.tblListRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblListRelationshipType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblListRelationship">
+        <PropertyRef Name="ListRelationshipType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblModelVersion_tblModel_Model_ID">
+    <End Role="tblModel" Type="Self.tblModel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblModelVersion">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblModelVersion_tblModelVersionFlag_VersionFlag_ID">
+    <End Role="tblModelVersionFlag" Type="Self.tblModelVersionFlag" Multiplicity="0..1" />
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModelVersionFlag">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblModelVersion">
+        <PropertyRef Name="VersionFlag_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblModelVersionFlag_tblModel_Model_ID">
+    <End Role="tblModel" Type="Self.tblModel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblModelVersionFlag" Type="Self.tblModelVersionFlag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblModelVersionFlag">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblNotificationQueue_tblModel_Model_ID">
+    <End Role="tblModel" Type="Self.tblModel" Multiplicity="0..1" />
+    <End Role="tblNotificationQueue" Type="Self.tblNotificationQueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblNotificationQueue">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblNotificationQueue_tblModelVersion_Version_ID">
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="0..1" />
+    <End Role="tblNotificationQueue" Type="Self.tblNotificationQueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModelVersion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblNotificationQueue">
+        <PropertyRef Name="Version_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblNotificationUsers_tblUser_UserID">
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
+    <End Role="tblNotificationUsers" Type="Self.tblNotificationUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblNotificationUsers">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityAccessControl_tblSecurityRole_Role_ID">
+    <End Role="tblSecurityRole" Type="Self.tblSecurityRole" Multiplicity="1" />
+    <End Role="tblSecurityAccessControl" Type="Self.tblSecurityAccessControl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSecurityRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityAccessControl">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccess_tblModel_Model_ID">
+    <End Role="tblModel" Type="Self.tblModel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblSecurityRoleAccess" Type="Self.tblSecurityRoleAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccess">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccess_tblSecurityPrivilege_Privilege_ID">
+    <End Role="tblSecurityPrivilege" Type="Self.tblSecurityPrivilege" Multiplicity="1" />
+    <End Role="tblSecurityRoleAccess" Type="Self.tblSecurityRoleAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSecurityPrivilege">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccess">
+        <PropertyRef Name="Privilege_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccess_tblSecurityRole_Role_ID">
+    <End Role="tblSecurityRole" Type="Self.tblSecurityRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblSecurityRoleAccess" Type="Self.tblSecurityRoleAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSecurityRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccess">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessFunctional_tblSecurityFunctionalPrivilege_FunctionalPrivilege_ID">
+    <End Role="tblSecurityPrivilegeFunctional" Type="Self.tblSecurityPrivilegeFunctional" Multiplicity="1" />
+    <End Role="tblSecurityRoleAccessFunctional" Type="Self.tblSecurityRoleAccessFunctional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSecurityPrivilegeFunctional">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessFunctional">
+        <PropertyRef Name="FunctionalPrivilege_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessFunctional_tblSecurityRole_Role_ID">
+    <End Role="tblSecurityRole" Type="Self.tblSecurityRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblSecurityRoleAccessFunctional" Type="Self.tblSecurityRoleAccessFunctional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSecurityRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessFunctional">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessMember_tblEntity_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblSecurityRoleAccessMember" Type="Self.tblSecurityRoleAccessMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessMember">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessMember_tblHierarchy_DerivedHierarchy_ID">
+    <End Role="tblDerivedHierarchy" Type="Self.tblDerivedHierarchy" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblSecurityRoleAccessMember" Type="Self.tblSecurityRoleAccessMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDerivedHierarchy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessMember">
+        <PropertyRef Name="DerivedHierarchy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessMember_tblHierarchy_ExplicitHierarchy_ID">
+    <End Role="tblHierarchy" Type="Self.tblHierarchy" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblSecurityRoleAccessMember" Type="Self.tblSecurityRoleAccessMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHierarchy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessMember">
+        <PropertyRef Name="ExplicitHierarchy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessMember_tblModelVersion_Version_ID">
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="1" />
+    <End Role="tblSecurityRoleAccessMember" Type="Self.tblSecurityRoleAccessMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModelVersion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessMember">
+        <PropertyRef Name="Version_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessMember_tblSecurityPrivilege_Privilege_ID">
+    <End Role="tblSecurityPrivilege" Type="Self.tblSecurityPrivilege" Multiplicity="1" />
+    <End Role="tblSecurityRoleAccessMember" Type="Self.tblSecurityRoleAccessMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSecurityPrivilege">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessMember">
+        <PropertyRef Name="Privilege_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSecurityRoleAccessMember_tblSecurityRole_Role_ID">
+    <End Role="tblSecurityRole" Type="Self.tblSecurityRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblSecurityRoleAccessMember" Type="Self.tblSecurityRoleAccessMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSecurityRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSecurityRoleAccessMember">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblStgBatch_tblEntity_Entity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="0..1" />
+    <End Role="tblStgBatch" Type="Self.tblStgBatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblStgBatch">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSubscriptionView_tblDerivedHierarchy">
+    <End Role="tblDerivedHierarchy" Type="Self.tblDerivedHierarchy" Multiplicity="0..1" />
+    <End Role="tblSubscriptionView" Type="Self.tblSubscriptionView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDerivedHierarchy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSubscriptionView">
+        <PropertyRef Name="DerivedHierarchy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSubscriptionView_tblEntity">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="0..1" />
+    <End Role="tblSubscriptionView" Type="Self.tblSubscriptionView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSubscriptionView">
+        <PropertyRef Name="Entity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSubscriptionView_tblModel">
+    <End Role="tblModel" Type="Self.tblModel" Multiplicity="1" />
+    <End Role="tblSubscriptionView" Type="Self.tblSubscriptionView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSubscriptionView">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSubscriptionView_tblModelVersion">
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="0..1" />
+    <End Role="tblSubscriptionView" Type="Self.tblSubscriptionView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModelVersion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSubscriptionView">
+        <PropertyRef Name="ModelVersion_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSyncRelationship_tblEntity_SourceEntity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1" />
+    <End Role="tblSyncRelationship" Type="Self.tblSyncRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSyncRelationship">
+        <PropertyRef Name="SourceEntity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSyncRelationship_tblEntity_TargetEntity_ID">
+    <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="1" />
+    <End Role="tblSyncRelationship" Type="Self.tblSyncRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEntity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSyncRelationship">
+        <PropertyRef Name="TargetEntity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSyncRelationship_tblVersion_SourceVersion_ID">
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="1" />
+    <End Role="tblSyncRelationship" Type="Self.tblSyncRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModelVersion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSyncRelationship">
+        <PropertyRef Name="SourceVersion_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSyncRelationship_tblVersion_TargetVersion_ID">
+    <End Role="tblModelVersion" Type="Self.tblModelVersion" Multiplicity="1" />
+    <End Role="tblSyncRelationship" Type="Self.tblSyncRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblModelVersion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSyncRelationship">
+        <PropertyRef Name="TargetVersion_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblSystemSetting_tblSystemSettingGroup">
+    <End Role="tblSystemSettingGroup" Type="Self.tblSystemSettingGroup" Multiplicity="1" />
+    <End Role="tblSystemSetting" Type="Self.tblSystemSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSystemSettingGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSystemSetting">
+        <PropertyRef Name="SystemSettingGroup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblUserGroupAssignment_tblUser_UserID">
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblUserGroupAssignment" Type="Self.tblUserGroupAssignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUserGroupAssignment">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblUserGroupAssignment_tblUserGroup_UserGroupID">
+    <End Role="tblUserGroup" Type="Self.tblUserGroup" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblUserGroupAssignment" Type="Self.tblUserGroupAssignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUserGroupAssignment">
+        <PropertyRef Name="UserGroup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblUserPreference_tblUserPreference_User_ID">
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblUserPreference" Type="Self.tblUserPreference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUserPreference">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachingAssignmentsCourse">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="TeachingAssignments" Type="Self.TeachingAssignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="TeachingAssignments">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachingAssignmentsInstructor">
+    <End Role="Instructor" Type="Self.Instructor" Multiplicity="0..1" />
+    <End Role="TeachingAssignments" Type="Self.TeachingAssignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instructor">
+        <PropertyRef Name="InstructorID" />
+      </Principal>
+      <Dependent Role="TeachingAssignments">
+        <PropertyRef Name="InstructorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachingAssignmentsTerm">
+    <End Role="StudyTerm" Type="Self.StudyTerm" Multiplicity="0..1" />
+    <End Role="TeachingAssignments" Type="Self.TeachingAssignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudyTerm">
+        <PropertyRef Name="TermID" />
+      </Principal>
+      <Dependent Role="TeachingAssignments">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Instructor" EntityType="Self.Instructor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudyTerm" EntityType="Self.StudyTerm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeachingAssignments" EntityType="Self.TeachingAssignments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAttribute" EntityType="Self.tblAttribute" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblAttributeGroup" EntityType="Self.tblAttributeGroup" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblAttributeGroupDetail" EntityType="Self.tblAttributeGroupDetail" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblBRBusinessRule" EntityType="Self.tblBRBusinessRule" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblBRItem" EntityType="Self.tblBRItem" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblBRItemProperties" EntityType="Self.tblBRItemProperties" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblBRItemTypeAppliesTo" EntityType="Self.tblBRItemTypeAppliesTo" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblBRLogicalOperatorGroup" EntityType="Self.tblBRLogicalOperatorGroup" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblBRStatusTransition" EntityType="Self.tblBRStatusTransition" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblCodeGenInfo" EntityType="Self.tblCodeGenInfo" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblDBErrors" EntityType="Self.tblDBErrors" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblDBUpgradeHistory" EntityType="Self.tblDBUpgradeHistory" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblDerivedHierarchy" EntityType="Self.tblDerivedHierarchy" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblDerivedHierarchyDetail" EntityType="Self.tblDerivedHierarchyDetail" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblEntity" EntityType="Self.tblEntity" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblErrorCodesMapping" EntityType="Self.tblErrorCodesMapping" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblEvent" EntityType="Self.tblEvent" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblExternalSystem" EntityType="Self.tblExternalSystem" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblFile" EntityType="Self.tblFile" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblHierarchy" EntityType="Self.tblHierarchy" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblIndex" EntityType="Self.tblIndex" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblList" EntityType="Self.tblList" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblListRelationship" EntityType="Self.tblListRelationship" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblListRelationshipType" EntityType="Self.tblListRelationshipType" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblLocalizedStrings" EntityType="Self.tblLocalizedStrings" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblModel" EntityType="Self.tblModel" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblModelVersion" EntityType="Self.tblModelVersion" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblModelVersionFlag" EntityType="Self.tblModelVersionFlag" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblNotificationQueue" EntityType="Self.tblNotificationQueue" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblNotificationUsers" EntityType="Self.tblNotificationUsers" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityAccessControl" EntityType="Self.tblSecurityAccessControl" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityObject" EntityType="Self.tblSecurityObject" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityPrivilege" EntityType="Self.tblSecurityPrivilege" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityPrivilegeFunctional" EntityType="Self.tblSecurityPrivilegeFunctional" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityRole" EntityType="Self.tblSecurityRole" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityRoleAccess" EntityType="Self.tblSecurityRoleAccess" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityRoleAccessFunctional" EntityType="Self.tblSecurityRoleAccessFunctional" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSecurityRoleAccessMember" EntityType="Self.tblSecurityRoleAccessMember" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblStgBatch" EntityType="Self.tblStgBatch" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblStgErrorDetail" EntityType="Self.tblStgErrorDetail" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSubscriptionView" EntityType="Self.tblSubscriptionView" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSyncRelationship" EntityType="Self.tblSyncRelationship" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSystem" EntityType="Self.tblSystem" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSystemSetting" EntityType="Self.tblSystemSetting" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblSystemSettingGroup" EntityType="Self.tblSystemSettingGroup" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblUserGroupAssignment" EntityType="Self.tblUserGroupAssignment" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblUserPreference" EntityType="Self.tblUserPreference" Schema="mdm" store:Type="Tables" />
+    <EntitySet Name="tblDataQualityOperationsState" EntityType="Self.tblDataQualityOperationsState" store:Type="Tables" store:Schema="mdm">
+      <DefiningQuery>SELECT 
+    [tblDataQualityOperationsState].[CreateDTM] AS [CreateDTM], 
+    [tblDataQualityOperationsState].[OperationId] AS [OperationId], 
+    [tblDataQualityOperationsState].[SerializedOperation] AS [SerializedOperation]
+    FROM [mdm].[tblDataQualityOperationsState] AS [tblDataQualityOperationsState]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Course" Association="Self.FK_Course">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentID" Association="Self.FK_DepartmentID">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student" Association="Self.FK_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudyTerm" Association="Self.FK_StudyTerm">
+      <End Role="StudyTerm" EntitySet="StudyTerm" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttribute_tblAttribute_FilterParentAttribute_ID" Association="Self.fk_tblAttribute_tblAttribute_FilterParentAttribute_ID">
+      <End Role="tblAttribute" EntitySet="tblAttribute" />
+      <End Role="tblAttribute1" EntitySet="tblAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttribute_tblAttribute_Source_ID" Association="Self.fk_tblAttribute_tblAttribute_Source_ID">
+      <End Role="tblAttribute" EntitySet="tblAttribute" />
+      <End Role="tblAttribute1" EntitySet="tblAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttribute_tblDerivedHierarchyDetail_FilterHierarchyDetail_ID" Association="Self.fk_tblAttribute_tblDerivedHierarchyDetail_FilterHierarchyDetail_ID">
+      <End Role="tblDerivedHierarchyDetail" EntitySet="tblDerivedHierarchyDetail" />
+      <End Role="tblAttribute" EntitySet="tblAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttribute_tblEntity_DomainEntity_ID" Association="Self.fk_tblAttribute_tblEntity_DomainEntity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblAttribute" EntitySet="tblAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttribute_tblEntity_Entity_ID" Association="Self.fk_tblAttribute_tblEntity_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblAttribute" EntitySet="tblAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttributeGroup_tblEntity_Entity_ID" Association="Self.fk_tblAttributeGroup_tblEntity_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblAttributeGroup" EntitySet="tblAttributeGroup" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttributeGroupDetail_tblAttribute_AttributeGroup_ID" Association="Self.fk_tblAttributeGroupDetail_tblAttribute_AttributeGroup_ID">
+      <End Role="tblAttributeGroup" EntitySet="tblAttributeGroup" />
+      <End Role="tblAttributeGroupDetail" EntitySet="tblAttributeGroupDetail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAttributeGroupDetail_tblAttribute_AttributeID" Association="Self.fk_tblAttributeGroupDetail_tblAttribute_AttributeID">
+      <End Role="tblAttribute" EntitySet="tblAttribute" />
+      <End Role="tblAttributeGroupDetail" EntitySet="tblAttributeGroupDetail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblBRBusinessRule_tblEntity_Entity_ID" Association="Self.fk_tblBRBusinessRule_tblEntity_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblBRBusinessRule" EntitySet="tblBRBusinessRule" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblBRItem_tblBRItemTypeAppliesTo_BRItemAppliesTo_ID" Association="Self.fk_tblBRItem_tblBRItemTypeAppliesTo_BRItemAppliesTo_ID">
+      <End Role="tblBRItemTypeAppliesTo" EntitySet="tblBRItemTypeAppliesTo" />
+      <End Role="tblBRItem" EntitySet="tblBRItem" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblBRItem_tblLogicalOperatorGroup_BRLogicalOperatorGroup_ID" Association="Self.fk_tblBRItem_tblLogicalOperatorGroup_BRLogicalOperatorGroup_ID">
+      <End Role="tblBRLogicalOperatorGroup" EntitySet="tblBRLogicalOperatorGroup" />
+      <End Role="tblBRItem" EntitySet="tblBRItem" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblBRItemProperties_tblBRItem_BRItem_ID" Association="Self.fk_tblBRItemProperties_tblBRItem_BRItem_ID">
+      <End Role="tblBRItem" EntitySet="tblBRItem" />
+      <End Role="tblBRItemProperties" EntitySet="tblBRItemProperties" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblBRItemTypeAppliesTo_tblListRelationship_ApplyTo_ID" Association="Self.fk_tblBRItemTypeAppliesTo_tblListRelationship_ApplyTo_ID">
+      <End Role="tblListRelationship" EntitySet="tblListRelationship" />
+      <End Role="tblBRItemTypeAppliesTo" EntitySet="tblBRItemTypeAppliesTo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblBRLogicalOperatorGroup_tblBRBusinessRule_BusinessRule_ID" Association="Self.fk_tblBRLogicalOperatorGroup_tblBRBusinessRule_BusinessRule_ID">
+      <End Role="tblBRBusinessRule" EntitySet="tblBRBusinessRule" />
+      <End Role="tblBRLogicalOperatorGroup" EntitySet="tblBRLogicalOperatorGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCodeGenInfo_tblEntity" Association="Self.FK_tblCodeGenInfo_tblEntity">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblCodeGenInfo" EntitySet="tblCodeGenInfo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblDerivedHierarchy_tblModel_Model_ID" Association="Self.fk_tblDerivedHierarchy_tblModel_Model_ID">
+      <End Role="tblModel" EntitySet="tblModel" />
+      <End Role="tblDerivedHierarchy" EntitySet="tblDerivedHierarchy" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblDerivedHierarchyDetail_ManyToManyChildAttribute_ID_tblAttribute_ID" Association="Self.fk_tblDerivedHierarchyDetail_ManyToManyChildAttribute_ID_tblAttribute_ID">
+      <End Role="tblAttribute" EntitySet="tblAttribute" />
+      <End Role="tblDerivedHierarchyDetail" EntitySet="tblDerivedHierarchyDetail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblDerivedHierarchyDetail_tblDerivedHierarchy_DerivedHierarchy_ID" Association="Self.fk_tblDerivedHierarchyDetail_tblDerivedHierarchy_DerivedHierarchy_ID">
+      <End Role="tblDerivedHierarchy" EntitySet="tblDerivedHierarchy" />
+      <End Role="tblDerivedHierarchyDetail" EntitySet="tblDerivedHierarchyDetail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblEntity_tblModel_Model_ID" Association="Self.fk_tblEntity_tblModel_Model_ID">
+      <End Role="tblModel" EntitySet="tblModel" />
+      <End Role="tblEntity" EntitySet="tblEntity" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblEvent_Entity_ID" Association="Self.fk_tblEvent_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblEvent" EntitySet="tblEvent" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblEvent_Version_ID" Association="Self.fk_tblEvent_Version_ID">
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+      <End Role="tblEvent" EntitySet="tblEvent" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblFile_tblFile_Source_ID" Association="Self.fk_tblFile_tblFile_Source_ID">
+      <End Role="tblFile" EntitySet="tblFile" />
+      <End Role="tblFile1" EntitySet="tblFile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblHierarchy_tblEntity_Entity_ID" Association="Self.fk_tblHierarchy_tblEntity_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblHierarchy" EntitySet="tblHierarchy" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblIndex_tblEntity_Entity_ID" Association="Self.fk_tblIndex_tblEntity_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblIndex" EntitySet="tblIndex" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblListRelationship_tblListRelationshipType_ListRelationshipType_ID" Association="Self.fk_tblListRelationship_tblListRelationshipType_ListRelationshipType_ID">
+      <End Role="tblListRelationshipType" EntitySet="tblListRelationshipType" />
+      <End Role="tblListRelationship" EntitySet="tblListRelationship" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblModelVersion_tblModel_Model_ID" Association="Self.fk_tblModelVersion_tblModel_Model_ID">
+      <End Role="tblModel" EntitySet="tblModel" />
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblModelVersion_tblModelVersionFlag_VersionFlag_ID" Association="Self.fk_tblModelVersion_tblModelVersionFlag_VersionFlag_ID">
+      <End Role="tblModelVersionFlag" EntitySet="tblModelVersionFlag" />
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblModelVersionFlag_tblModel_Model_ID" Association="Self.fk_tblModelVersionFlag_tblModel_Model_ID">
+      <End Role="tblModel" EntitySet="tblModel" />
+      <End Role="tblModelVersionFlag" EntitySet="tblModelVersionFlag" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblNotificationQueue_tblModel_Model_ID" Association="Self.fk_tblNotificationQueue_tblModel_Model_ID">
+      <End Role="tblModel" EntitySet="tblModel" />
+      <End Role="tblNotificationQueue" EntitySet="tblNotificationQueue" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblNotificationQueue_tblModelVersion_Version_ID" Association="Self.fk_tblNotificationQueue_tblModelVersion_Version_ID">
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+      <End Role="tblNotificationQueue" EntitySet="tblNotificationQueue" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblNotificationUsers_tblUser_UserID" Association="Self.fk_tblNotificationUsers_tblUser_UserID">
+      <End Role="tblUser" EntitySet="tblUser" />
+      <End Role="tblNotificationUsers" EntitySet="tblNotificationUsers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityAccessControl_tblSecurityRole_Role_ID" Association="Self.fk_tblSecurityAccessControl_tblSecurityRole_Role_ID">
+      <End Role="tblSecurityRole" EntitySet="tblSecurityRole" />
+      <End Role="tblSecurityAccessControl" EntitySet="tblSecurityAccessControl" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccess_tblModel_Model_ID" Association="Self.fk_tblSecurityRoleAccess_tblModel_Model_ID">
+      <End Role="tblModel" EntitySet="tblModel" />
+      <End Role="tblSecurityRoleAccess" EntitySet="tblSecurityRoleAccess" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccess_tblSecurityPrivilege_Privilege_ID" Association="Self.fk_tblSecurityRoleAccess_tblSecurityPrivilege_Privilege_ID">
+      <End Role="tblSecurityPrivilege" EntitySet="tblSecurityPrivilege" />
+      <End Role="tblSecurityRoleAccess" EntitySet="tblSecurityRoleAccess" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccess_tblSecurityRole_Role_ID" Association="Self.fk_tblSecurityRoleAccess_tblSecurityRole_Role_ID">
+      <End Role="tblSecurityRole" EntitySet="tblSecurityRole" />
+      <End Role="tblSecurityRoleAccess" EntitySet="tblSecurityRoleAccess" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessFunctional_tblSecurityFunctionalPrivilege_FunctionalPrivilege_ID" Association="Self.fk_tblSecurityRoleAccessFunctional_tblSecurityFunctionalPrivilege_FunctionalPrivilege_ID">
+      <End Role="tblSecurityPrivilegeFunctional" EntitySet="tblSecurityPrivilegeFunctional" />
+      <End Role="tblSecurityRoleAccessFunctional" EntitySet="tblSecurityRoleAccessFunctional" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessFunctional_tblSecurityRole_Role_ID" Association="Self.fk_tblSecurityRoleAccessFunctional_tblSecurityRole_Role_ID">
+      <End Role="tblSecurityRole" EntitySet="tblSecurityRole" />
+      <End Role="tblSecurityRoleAccessFunctional" EntitySet="tblSecurityRoleAccessFunctional" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessMember_tblEntity_Entity_ID" Association="Self.fk_tblSecurityRoleAccessMember_tblEntity_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblSecurityRoleAccessMember" EntitySet="tblSecurityRoleAccessMember" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessMember_tblHierarchy_DerivedHierarchy_ID" Association="Self.fk_tblSecurityRoleAccessMember_tblHierarchy_DerivedHierarchy_ID">
+      <End Role="tblDerivedHierarchy" EntitySet="tblDerivedHierarchy" />
+      <End Role="tblSecurityRoleAccessMember" EntitySet="tblSecurityRoleAccessMember" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessMember_tblHierarchy_ExplicitHierarchy_ID" Association="Self.fk_tblSecurityRoleAccessMember_tblHierarchy_ExplicitHierarchy_ID">
+      <End Role="tblHierarchy" EntitySet="tblHierarchy" />
+      <End Role="tblSecurityRoleAccessMember" EntitySet="tblSecurityRoleAccessMember" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessMember_tblModelVersion_Version_ID" Association="Self.fk_tblSecurityRoleAccessMember_tblModelVersion_Version_ID">
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+      <End Role="tblSecurityRoleAccessMember" EntitySet="tblSecurityRoleAccessMember" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessMember_tblSecurityPrivilege_Privilege_ID" Association="Self.fk_tblSecurityRoleAccessMember_tblSecurityPrivilege_Privilege_ID">
+      <End Role="tblSecurityPrivilege" EntitySet="tblSecurityPrivilege" />
+      <End Role="tblSecurityRoleAccessMember" EntitySet="tblSecurityRoleAccessMember" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSecurityRoleAccessMember_tblSecurityRole_Role_ID" Association="Self.fk_tblSecurityRoleAccessMember_tblSecurityRole_Role_ID">
+      <End Role="tblSecurityRole" EntitySet="tblSecurityRole" />
+      <End Role="tblSecurityRoleAccessMember" EntitySet="tblSecurityRoleAccessMember" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblStgBatch_tblEntity_Entity_ID" Association="Self.fk_tblStgBatch_tblEntity_Entity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblStgBatch" EntitySet="tblStgBatch" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSubscriptionView_tblDerivedHierarchy" Association="Self.fk_tblSubscriptionView_tblDerivedHierarchy">
+      <End Role="tblDerivedHierarchy" EntitySet="tblDerivedHierarchy" />
+      <End Role="tblSubscriptionView" EntitySet="tblSubscriptionView" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSubscriptionView_tblEntity" Association="Self.fk_tblSubscriptionView_tblEntity">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblSubscriptionView" EntitySet="tblSubscriptionView" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSubscriptionView_tblModel" Association="Self.fk_tblSubscriptionView_tblModel">
+      <End Role="tblModel" EntitySet="tblModel" />
+      <End Role="tblSubscriptionView" EntitySet="tblSubscriptionView" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSubscriptionView_tblModelVersion" Association="Self.fk_tblSubscriptionView_tblModelVersion">
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+      <End Role="tblSubscriptionView" EntitySet="tblSubscriptionView" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSyncRelationship_tblEntity_SourceEntity_ID" Association="Self.fk_tblSyncRelationship_tblEntity_SourceEntity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblSyncRelationship" EntitySet="tblSyncRelationship" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSyncRelationship_tblEntity_TargetEntity_ID" Association="Self.fk_tblSyncRelationship_tblEntity_TargetEntity_ID">
+      <End Role="tblEntity" EntitySet="tblEntity" />
+      <End Role="tblSyncRelationship" EntitySet="tblSyncRelationship" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSyncRelationship_tblVersion_SourceVersion_ID" Association="Self.fk_tblSyncRelationship_tblVersion_SourceVersion_ID">
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+      <End Role="tblSyncRelationship" EntitySet="tblSyncRelationship" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSyncRelationship_tblVersion_TargetVersion_ID" Association="Self.fk_tblSyncRelationship_tblVersion_TargetVersion_ID">
+      <End Role="tblModelVersion" EntitySet="tblModelVersion" />
+      <End Role="tblSyncRelationship" EntitySet="tblSyncRelationship" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblSystemSetting_tblSystemSettingGroup" Association="Self.fk_tblSystemSetting_tblSystemSettingGroup">
+      <End Role="tblSystemSettingGroup" EntitySet="tblSystemSettingGroup" />
+      <End Role="tblSystemSetting" EntitySet="tblSystemSetting" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblUserGroupAssignment_tblUser_UserID" Association="Self.fk_tblUserGroupAssignment_tblUser_UserID">
+      <End Role="tblUser" EntitySet="tblUser" />
+      <End Role="tblUserGroupAssignment" EntitySet="tblUserGroupAssignment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblUserGroupAssignment_tblUserGroup_UserGroupID" Association="Self.fk_tblUserGroupAssignment_tblUserGroup_UserGroupID">
+      <End Role="tblUserGroup" EntitySet="tblUserGroup" />
+      <End Role="tblUserGroupAssignment" EntitySet="tblUserGroupAssignment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblUserPreference_tblUserPreference_User_ID" Association="Self.fk_tblUserPreference_tblUserPreference_User_ID">
+      <End Role="tblUser" EntitySet="tblUser" />
+      <End Role="tblUserPreference" EntitySet="tblUserPreference" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachingAssignmentsCourse" Association="Self.FK_TeachingAssignmentsCourse">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachingAssignmentsInstructor" Association="Self.FK_TeachingAssignmentsInstructor">
+      <End Role="Instructor" EntitySet="Instructor" />
+      <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachingAssignmentsTerm" Association="Self.FK_TeachingAssignmentsTerm">
+      <End Role="StudyTerm" EntitySet="StudyTerm" />
+      <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

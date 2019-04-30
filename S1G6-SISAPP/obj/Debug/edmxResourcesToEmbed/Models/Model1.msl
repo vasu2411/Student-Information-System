@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="Model.Cours">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="Model.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instructors">
+      <EntityTypeMapping TypeName="Model.Instructor">
+        <MappingFragment StoreEntitySet="Instructor">
+          <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+          <ScalarProperty Name="InstructorFirstName" ColumnName="InstructorFirstName" />
+          <ScalarProperty Name="InstructorLastName" ColumnName="InstructorLastName" />
+          <ScalarProperty Name="InstructorPhone" ColumnName="InstructorPhone" />
+          <ScalarProperty Name="InstructorHireDate" ColumnName="InstructorHireDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="Model.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="StudentFirstName" ColumnName="StudentFirstName" />
+          <ScalarProperty Name="StudentLastName" ColumnName="StudentLastName" />
+          <ScalarProperty Name="StudentEnrollment" ColumnName="StudentEnrollment" />
+          <ScalarProperty Name="StudentPhone" ColumnName="StudentPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudyTerms">
+      <EntityTypeMapping TypeName="Model.StudyTerm">
+        <MappingFragment StoreEntitySet="StudyTerm">
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="TermName" ColumnName="TermName" />
+          <ScalarProperty Name="TermStartDate" ColumnName="TermStartDate" />
+          <ScalarProperty Name="TermEndDate" ColumnName="TermEndDate" />
+          <ScalarProperty Name="TermYear" ColumnName="TermYear" />
+          <ScalarProperty Name="TermSeason" ColumnName="TermSeason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeachingAssignment">
+      <EntityTypeMapping TypeName="Model.TeachingAssignment">
+        <MappingFragment StoreEntitySet="TeachingAssignments">
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAttributes">
+      <EntityTypeMapping TypeName="Model.tblAttribute">
+        <MappingFragment StoreEntitySet="tblAttribute">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
+          <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+          <ScalarProperty Name="IsName" ColumnName="IsName" />
+          <ScalarProperty Name="IsCode" ColumnName="IsCode" />
+          <ScalarProperty Name="FilterHierarchyDetail_ID" ColumnName="FilterHierarchyDetail_ID" />
+          <ScalarProperty Name="FilterParentAttribute_ID" ColumnName="FilterParentAttribute_ID" />
+          <ScalarProperty Name="ChangeTrackingGroup" ColumnName="ChangeTrackingGroup" />
+          <ScalarProperty Name="DomainEntity_ID" ColumnName="DomainEntity_ID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="DisplayWidth" ColumnName="DisplayWidth" />
+          <ScalarProperty Name="InputMask_ID" ColumnName="InputMask_ID" />
+          <ScalarProperty Name="DataTypeInformation" ColumnName="DataTypeInformation" />
+          <ScalarProperty Name="DataType_ID" ColumnName="DataType_ID" />
+          <ScalarProperty Name="AttributeType_ID" ColumnName="AttributeType_ID" />
+          <ScalarProperty Name="TableColumn" ColumnName="TableColumn" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="MemberType_ID" ColumnName="MemberType_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="Source_LastChgTS" ColumnName="Source_LastChgTS" />
+          <ScalarProperty Name="Source_ID" ColumnName="Source_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAttributeGroups">
+      <EntityTypeMapping TypeName="Model.tblAttributeGroup">
+        <MappingFragment StoreEntitySet="tblAttributeGroup">
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+          <ScalarProperty Name="FreezeNameCode" ColumnName="FreezeNameCode" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MemberType_ID" ColumnName="MemberType_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAttributeGroupDetails">
+      <EntityTypeMapping TypeName="Model.tblAttributeGroupDetail">
+        <MappingFragment StoreEntitySet="tblAttributeGroupDetail">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="Attribute_ID" ColumnName="Attribute_ID" />
+          <ScalarProperty Name="AttributeGroup_ID" ColumnName="AttributeGroup_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBRBusinessRules">
+      <EntityTypeMapping TypeName="Model.tblBRBusinessRule">
+        <MappingFragment StoreEntitySet="tblBRBusinessRule">
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="NotificationUserID" ColumnName="NotificationUserID" />
+          <ScalarProperty Name="NotificationGroupID" ColumnName="NotificationGroupID" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="MemberType_ID" ColumnName="MemberType_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="RuleElseActionText" ColumnName="RuleElseActionText" />
+          <ScalarProperty Name="RuleActionText" ColumnName="RuleActionText" />
+          <ScalarProperty Name="RuleConditionText" ColumnName="RuleConditionText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBRItems">
+      <EntityTypeMapping TypeName="Model.tblBRItem">
+        <MappingFragment StoreEntitySet="tblBRItem">
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="AnchorAttributeType" ColumnName="AnchorAttributeType" />
+          <ScalarProperty Name="AnchorName" ColumnName="AnchorName" />
+          <ScalarProperty Name="ItemText" ColumnName="ItemText" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="BRItemAppliesTo_ID" ColumnName="BRItemAppliesTo_ID" />
+          <ScalarProperty Name="BRLogicalOperatorGroup_ID" ColumnName="BRLogicalOperatorGroup_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBRItemProperties">
+      <EntityTypeMapping TypeName="Model.tblBRItemProperty">
+        <MappingFragment StoreEntitySet="tblBRItemProperties">
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="SuppressText" ColumnName="SuppressText" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="IsLeftHandSide" ColumnName="IsLeftHandSide" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="PropertyName_ID" ColumnName="PropertyName_ID" />
+          <ScalarProperty Name="PropertyType_ID" ColumnName="PropertyType_ID" />
+          <ScalarProperty Name="BRItem_ID" ColumnName="BRItem_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBRItemTypeAppliesToes">
+      <EntityTypeMapping TypeName="Model.tblBRItemTypeAppliesTo">
+        <MappingFragment StoreEntitySet="tblBRItemTypeAppliesTo">
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="ApplyTo_ID" ColumnName="ApplyTo_ID" />
+          <ScalarProperty Name="BRItemType_ID" ColumnName="BRItemType_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBRLogicalOperatorGroups">
+      <EntityTypeMapping TypeName="Model.tblBRLogicalOperatorGroup">
+        <MappingFragment StoreEntitySet="tblBRLogicalOperatorGroup">
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="BusinessRule_ID" ColumnName="BusinessRule_ID" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="LogicalOperator_ID" ColumnName="LogicalOperator_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBRStatusTransitions">
+      <EntityTypeMapping TypeName="Model.tblBRStatusTransition">
+        <MappingFragment StoreEntitySet="tblBRStatusTransition">
+          <ScalarProperty Name="NewStatus_ID" ColumnName="NewStatus_ID" />
+          <ScalarProperty Name="CurrentStatus_ID" ColumnName="CurrentStatus_ID" />
+          <ScalarProperty Name="Action_ID" ColumnName="Action_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCodeGenInfoes">
+      <EntityTypeMapping TypeName="Model.tblCodeGenInfo">
+        <MappingFragment StoreEntitySet="tblCodeGenInfo">
+          <ScalarProperty Name="LargestCodeValue" ColumnName="LargestCodeValue" />
+          <ScalarProperty Name="Seed" ColumnName="Seed" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDBErrors">
+      <EntityTypeMapping TypeName="Model.tblDBError">
+        <MappingFragment StoreEntitySet="tblDBErrors">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Language_ID" ColumnName="Language_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDBUpgradeHistories">
+      <EntityTypeMapping TypeName="Model.tblDBUpgradeHistory">
+        <MappingFragment StoreEntitySet="tblDBUpgradeHistory">
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="EnterUser" ColumnName="EnterUser" />
+          <ScalarProperty Name="DBVersion" ColumnName="DBVersion" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDerivedHierarchies">
+      <EntityTypeMapping TypeName="Model.tblDerivedHierarchy">
+        <MappingFragment StoreEntitySet="tblDerivedHierarchy">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="AnchorNullRecursions" ColumnName="AnchorNullRecursions" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDerivedHierarchyDetails">
+      <EntityTypeMapping TypeName="Model.tblDerivedHierarchyDetail">
+        <MappingFragment StoreEntitySet="tblDerivedHierarchyDetail">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="Level_ID" ColumnName="Level_ID" />
+          <ScalarProperty Name="ManyToManyChildAttribute_ID" ColumnName="ManyToManyChildAttribute_ID" />
+          <ScalarProperty Name="ForeignType_ID" ColumnName="ForeignType_ID" />
+          <ScalarProperty Name="Foreign_ID" ColumnName="Foreign_ID" />
+          <ScalarProperty Name="ForeignParent_ID" ColumnName="ForeignParent_ID" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DerivedHierarchy_ID" ColumnName="DerivedHierarchy_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEntities">
+      <EntityTypeMapping TypeName="Model.tblEntity">
+        <MappingFragment StoreEntitySet="tblEntity">
+          <ScalarProperty Name="RequireApproval" ColumnName="RequireApproval" />
+          <ScalarProperty Name="TransactionLogType" ColumnName="TransactionLogType" />
+          <ScalarProperty Name="DataCompression" ColumnName="DataCompression" />
+          <ScalarProperty Name="StagingRelationshipName" ColumnName="StagingRelationshipName" />
+          <ScalarProperty Name="StagingConsolidatedName" ColumnName="StagingConsolidatedName" />
+          <ScalarProperty Name="StagingLeafName" ColumnName="StagingLeafName" />
+          <ScalarProperty Name="StagingBase" ColumnName="StagingBase" />
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IsBase" ColumnName="IsBase" />
+          <ScalarProperty Name="CollectionMemberTable" ColumnName="CollectionMemberTable" />
+          <ScalarProperty Name="CollectionTable" ColumnName="CollectionTable" />
+          <ScalarProperty Name="HierarchyParentTable" ColumnName="HierarchyParentTable" />
+          <ScalarProperty Name="HierarchyTable" ColumnName="HierarchyTable" />
+          <ScalarProperty Name="EntityTable" ColumnName="EntityTable" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblErrorCodesMappings">
+      <EntityTypeMapping TypeName="Model.tblErrorCodesMapping">
+        <MappingFragment StoreEntitySet="tblErrorCodesMapping">
+          <ScalarProperty Name="UniqueErrorCode" ColumnName="UniqueErrorCode" />
+          <ScalarProperty Name="Bitmask" ColumnName="Bitmask" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEvents">
+      <EntityTypeMapping TypeName="Model.tblEvent">
+        <MappingFragment StoreEntitySet="tblEvent">
+          <ScalarProperty Name="ErrorMsg" ColumnName="ErrorMsg" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="EventStatus_ID" ColumnName="EventStatus_ID" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="Version_ID" ColumnName="Version_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblExternalSystems">
+      <EntityTypeMapping TypeName="Model.tblExternalSystem">
+        <MappingFragment StoreEntitySet="tblExternalSystem">
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFiles">
+      <EntityTypeMapping TypeName="Model.tblFile">
+        <MappingFragment StoreEntitySet="tblFile">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+          <ScalarProperty Name="FileContentType" ColumnName="FileContentType" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Source_LastChgTS" ColumnName="Source_LastChgTS" />
+          <ScalarProperty Name="Source_ID" ColumnName="Source_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHierarchies">
+      <EntityTypeMapping TypeName="Model.tblHierarchy">
+        <MappingFragment StoreEntitySet="tblHierarchy">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblIndexes">
+      <EntityTypeMapping TypeName="Model.tblIndex">
+        <MappingFragment StoreEntitySet="tblIndex">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IsUnique" ColumnName="IsUnique" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SysIndex_ID" ColumnName="SysIndex_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLists">
+      <EntityTypeMapping TypeName="Model.tblList">
+        <MappingFragment StoreEntitySet="tblList">
+          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="OptionID" ColumnName="OptionID" />
+          <ScalarProperty Name="ListOption" ColumnName="ListOption" />
+          <ScalarProperty Name="Seq" ColumnName="Seq" />
+          <ScalarProperty Name="ListName" ColumnName="ListName" />
+          <ScalarProperty Name="ListCode" ColumnName="ListCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblListRelationships">
+      <EntityTypeMapping TypeName="Model.tblListRelationship">
+        <MappingFragment StoreEntitySet="tblListRelationship">
+          <ScalarProperty Name="ListRelationshipType_ID" ColumnName="ListRelationshipType_ID" />
+          <ScalarProperty Name="Child_ID" ColumnName="Child_ID" />
+          <ScalarProperty Name="ChildListCode" ColumnName="ChildListCode" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="ParentListCode" ColumnName="ParentListCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblListRelationshipTypes">
+      <EntityTypeMapping TypeName="Model.tblListRelationshipType">
+        <MappingFragment StoreEntitySet="tblListRelationshipType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocalizedStrings">
+      <EntityTypeMapping TypeName="Model.tblLocalizedString">
+        <MappingFragment StoreEntitySet="tblLocalizedStrings">
+          <ScalarProperty Name="LocalizedValue" ColumnName="LocalizedValue" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblModels">
+      <EntityTypeMapping TypeName="Model.tblModel">
+        <MappingFragment StoreEntitySet="tblModel">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="LogRetentionDays" ColumnName="LogRetentionDays" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblModelVersions">
+      <EntityTypeMapping TypeName="Model.tblModelVersion">
+        <MappingFragment StoreEntitySet="tblModelVersion">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="AsOfVersion_ID" ColumnName="AsOfVersion_ID" />
+          <ScalarProperty Name="VersionFlag_ID" ColumnName="VersionFlag_ID" />
+          <ScalarProperty Name="Display_ID" ColumnName="Display_ID" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblModelVersionFlags">
+      <EntityTypeMapping TypeName="Model.tblModelVersionFlag">
+        <MappingFragment StoreEntitySet="tblModelVersionFlag">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="CommittedOnly_ID" ColumnName="CommittedOnly_ID" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNotificationQueues">
+      <EntityTypeMapping TypeName="Model.tblNotificationQueue">
+        <MappingFragment StoreEntitySet="tblNotificationQueue">
+          <ScalarProperty Name="SentDTM" ColumnName="SentDTM" />
+          <ScalarProperty Name="DueDTM" ColumnName="DueDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="PriorityRank" ColumnName="PriorityRank" />
+          <ScalarProperty Name="BRBusinessRule_ID" ColumnName="BRBusinessRule_ID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="MemberType_ID" ColumnName="MemberType_ID" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="Version_ID" ColumnName="Version_ID" />
+          <ScalarProperty Name="NotificationType_ID" ColumnName="NotificationType_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNotificationUsers">
+      <EntityTypeMapping TypeName="Model.tblNotificationUser">
+        <MappingFragment StoreEntitySet="tblNotificationUsers">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Notification_ID" ColumnName="Notification_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityAccessControls">
+      <EntityTypeMapping TypeName="Model.tblSecurityAccessControl">
+        <MappingFragment StoreEntitySet="tblSecurityAccessControl">
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="Principal_ID" ColumnName="Principal_ID" />
+          <ScalarProperty Name="PrincipalType_ID" ColumnName="PrincipalType_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityObjects">
+      <EntityTypeMapping TypeName="Model.tblSecurityObject">
+        <MappingFragment StoreEntitySet="tblSecurityObject">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ViewName" ColumnName="ViewName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityPrivileges">
+      <EntityTypeMapping TypeName="Model.tblSecurityPrivilege">
+        <MappingFragment StoreEntitySet="tblSecurityPrivilege">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityPrivilegeFunctionals">
+      <EntityTypeMapping TypeName="Model.tblSecurityPrivilegeFunctional">
+        <MappingFragment StoreEntitySet="tblSecurityPrivilegeFunctional">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityRoles">
+      <EntityTypeMapping TypeName="Model.tblSecurityRole">
+        <MappingFragment StoreEntitySet="tblSecurityRole">
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityRoleAccesses">
+      <EntityTypeMapping TypeName="Model.tblSecurityRoleAccess">
+        <MappingFragment StoreEntitySet="tblSecurityRoleAccess">
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Object_ID" ColumnName="Object_ID" />
+          <ScalarProperty Name="Securable_ID" ColumnName="Securable_ID" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="AccessPermission" ColumnName="AccessPermission" />
+          <ScalarProperty Name="Privilege_ID" ColumnName="Privilege_ID" />
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityRoleAccessFunctionals">
+      <EntityTypeMapping TypeName="Model.tblSecurityRoleAccessFunctional">
+        <MappingFragment StoreEntitySet="tblSecurityRoleAccessFunctional">
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="FunctionalPrivilege_ID" ColumnName="FunctionalPrivilege_ID" />
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSecurityRoleAccessMembers">
+      <EntityTypeMapping TypeName="Model.tblSecurityRoleAccessMember">
+        <MappingFragment StoreEntitySet="tblSecurityRoleAccessMember">
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IsInitialized" ColumnName="IsInitialized" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="MemberType_ID" ColumnName="MemberType_ID" />
+          <ScalarProperty Name="Hierarchy_ID" ColumnName="Hierarchy_ID" />
+          <ScalarProperty Name="DerivedHierarchy_ID" ColumnName="DerivedHierarchy_ID" />
+          <ScalarProperty Name="ExplicitHierarchy_ID" ColumnName="ExplicitHierarchy_ID" />
+          <ScalarProperty Name="HierarchyType_ID" ColumnName="HierarchyType_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="Version_ID" ColumnName="Version_ID" />
+          <ScalarProperty Name="AccessPermission" ColumnName="AccessPermission" />
+          <ScalarProperty Name="Privilege_ID" ColumnName="Privilege_ID" />
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStgBatches">
+      <EntityTypeMapping TypeName="Model.tblStgBatch">
+        <MappingFragment StoreEntitySet="tblStgBatch">
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="LastClearedUserID" ColumnName="LastClearedUserID" />
+          <ScalarProperty Name="LastClearedDTM" ColumnName="LastClearedDTM" />
+          <ScalarProperty Name="LastRunEndUserID" ColumnName="LastRunEndUserID" />
+          <ScalarProperty Name="LastRunEndDTM" ColumnName="LastRunEndDTM" />
+          <ScalarProperty Name="LastRunStartUserID" ColumnName="LastRunStartUserID" />
+          <ScalarProperty Name="LastRunStartDTM" ColumnName="LastRunStartDTM" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="ErrorMemberRelationshipCount" ColumnName="ErrorMemberRelationshipCount" />
+          <ScalarProperty Name="TotalMemberRelationshipCount" ColumnName="TotalMemberRelationshipCount" />
+          <ScalarProperty Name="ErrorMemberAttributeCount" ColumnName="ErrorMemberAttributeCount" />
+          <ScalarProperty Name="TotalMemberAttributeCount" ColumnName="TotalMemberAttributeCount" />
+          <ScalarProperty Name="ErrorMemberCount" ColumnName="ErrorMemberCount" />
+          <ScalarProperty Name="TotalMemberCount" ColumnName="TotalMemberCount" />
+          <ScalarProperty Name="Version_ID" ColumnName="Version_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ExternalSystem_ID" ColumnName="ExternalSystem_ID" />
+          <ScalarProperty Name="BatchTag" ColumnName="BatchTag" />
+          <ScalarProperty Name="MemberType_ID" ColumnName="MemberType_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="OriginalBatch_ID" ColumnName="OriginalBatch_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStgErrorDetails">
+      <EntityTypeMapping TypeName="Model.tblStgErrorDetail">
+        <MappingFragment StoreEntitySet="tblStgErrorDetail">
+          <ScalarProperty Name="UniqueErrorCode" ColumnName="UniqueErrorCode" />
+          <ScalarProperty Name="AttributeValue" ColumnName="AttributeValue" />
+          <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Batch_ID" ColumnName="Batch_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSubscriptionViews">
+      <EntityTypeMapping TypeName="Model.tblSubscriptionView">
+        <MappingFragment StoreEntitySet="tblSubscriptionView">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgVersionID" ColumnName="LastChgVersionID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterVersionID" ColumnName="EnterVersionID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="IncludeSoftDeletedMembers" ColumnName="IncludeSoftDeletedMembers" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="Levels" ColumnName="Levels" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelVersionFlag_ID" ColumnName="ModelVersionFlag_ID" />
+          <ScalarProperty Name="ModelVersion_ID" ColumnName="ModelVersion_ID" />
+          <ScalarProperty Name="ViewFormat_ID" ColumnName="ViewFormat_ID" />
+          <ScalarProperty Name="DerivedHierarchy_ID" ColumnName="DerivedHierarchy_ID" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="Entity_ID" ColumnName="Entity_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSyncRelationships">
+      <EntityTypeMapping TypeName="Model.tblSyncRelationship">
+        <MappingFragment StoreEntitySet="tblSyncRelationship">
+          <ScalarProperty Name="LastChgTS" ColumnName="LastChgTS" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="LastSyncAttemptErrorInfo" ColumnName="LastSyncAttemptErrorInfo" />
+          <ScalarProperty Name="LastSyncAttemptStatus" ColumnName="LastSyncAttemptStatus" />
+          <ScalarProperty Name="LastSyncAttemptDTM" ColumnName="LastSyncAttemptDTM" />
+          <ScalarProperty Name="LastSuccessfulSyncTimestamp" ColumnName="LastSuccessfulSyncTimestamp" />
+          <ScalarProperty Name="LastSuccessfulSyncDTM" ColumnName="LastSuccessfulSyncDTM" />
+          <ScalarProperty Name="RefreshFrequencyInHours" ColumnName="RefreshFrequencyInHours" />
+          <ScalarProperty Name="TargetEntityNameIsAliased" ColumnName="TargetEntityNameIsAliased" />
+          <ScalarProperty Name="TargetEntity_ID" ColumnName="TargetEntity_ID" />
+          <ScalarProperty Name="TargetVersion_ID" ColumnName="TargetVersion_ID" />
+          <ScalarProperty Name="SourceEntity_ID" ColumnName="SourceEntity_ID" />
+          <ScalarProperty Name="SourceVersion_ID" ColumnName="SourceVersion_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSystems">
+      <EntityTypeMapping TypeName="Model.tblSystem">
+        <MappingFragment StoreEntitySet="tblSystem">
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="SchemaVersion" ColumnName="SchemaVersion" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSystemSettings">
+      <EntityTypeMapping TypeName="Model.tblSystemSetting">
+        <MappingFragment StoreEntitySet="tblSystemSetting">
+          <ScalarProperty Name="DisplaySequence" ColumnName="DisplaySequence" />
+          <ScalarProperty Name="SystemSettingGroup_ID" ColumnName="SystemSettingGroup_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="ListCode" ColumnName="ListCode" />
+          <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+          <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+          <ScalarProperty Name="DataType_ID" ColumnName="DataType_ID" />
+          <ScalarProperty Name="SettingType_ID" ColumnName="SettingType_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSystemSettingGroups">
+      <EntityTypeMapping TypeName="Model.tblSystemSettingGroup">
+        <MappingFragment StoreEntitySet="tblSystemSettingGroup">
+          <ScalarProperty Name="DisplaySequence" ColumnName="DisplaySequence" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="Model.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="LastLoginDTM" ColumnName="LastLoginDTM" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserGroups">
+      <EntityTypeMapping TypeName="Model.tblUserGroup">
+        <MappingFragment StoreEntitySet="tblUserGroup">
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="UserGroupType_ID" ColumnName="UserGroupType_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserGroupAssignments">
+      <EntityTypeMapping TypeName="Model.tblUserGroupAssignment">
+        <MappingFragment StoreEntitySet="tblUserGroupAssignment">
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="UserGroup_ID" ColumnName="UserGroup_ID" />
+          <ScalarProperty Name="MUID" ColumnName="MUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserPreferences">
+      <EntityTypeMapping TypeName="Model.tblUserPreference">
+        <MappingFragment StoreEntitySet="tblUserPreference">
+          <ScalarProperty Name="LastChgUserID" ColumnName="LastChgUserID" />
+          <ScalarProperty Name="LastChgDTM" ColumnName="LastChgDTM" />
+          <ScalarProperty Name="EnterUserID" ColumnName="EnterUserID" />
+          <ScalarProperty Name="EnterDTM" ColumnName="EnterDTM" />
+          <ScalarProperty Name="PreferenceValue" ColumnName="PreferenceValue" />
+          <ScalarProperty Name="PreferenceName" ColumnName="PreferenceName" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDataQualityOperationsStates">
+      <EntityTypeMapping TypeName="Model.tblDataQualityOperationsState">
+        <MappingFragment StoreEntitySet="tblDataQualityOperationsState">
+          <ScalarProperty Name="SerializedOperation" ColumnName="SerializedOperation" />
+          <ScalarProperty Name="OperationId" ColumnName="OperationId" />
+          <ScalarProperty Name="CreateDTM" ColumnName="CreateDTM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registration1">
+      <EntityTypeMapping TypeName="Model.Registration1">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

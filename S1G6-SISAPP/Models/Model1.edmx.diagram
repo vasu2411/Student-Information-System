@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="360c5549e0ae46ff8202eb3f170ed8e8" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="Model.Cours" Width="1.5" PointX="2.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Department" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Instructor" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Student" Width="1.5" PointX="0.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StudyTerm" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_DepartmentID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.TeachingAssignment" Width="1.5" PointX="6.625" PointY="0.5" />
+        <EntityTypeShape EntityType="Model.tblAttribute" Width="1.5" PointX="10.5" PointY="62.125" />
+        <EntityTypeShape EntityType="Model.tblAttributeGroup" Width="1.5" PointX="5.25" PointY="36.375" />
+        <EntityTypeShape EntityType="Model.tblAttributeGroupDetail" Width="1.5" PointX="16.75" PointY="51.875" />
+        <EntityTypeShape EntityType="Model.tblBRBusinessRule" Width="1.5" PointX="5.25" PointY="53.875" />
+        <EntityTypeShape EntityType="Model.tblBRItem" Width="1.5" PointX="9.75" PointY="54.75" />
+        <EntityTypeShape EntityType="Model.tblBRItemProperty" Width="1.5" PointX="12" PointY="50.75" />
+        <EntityTypeShape EntityType="Model.tblBRItemTypeAppliesTo" Width="1.5" PointX="7.5" PointY="79.25" />
+        <EntityTypeShape EntityType="Model.tblBRLogicalOperatorGroup" Width="1.5" PointX="7.5" PointY="55" />
+        <EntityTypeShape EntityType="Model.tblBRStatusTransition" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblCodeGenInfo" Width="1.5" PointX="5.25" PointY="51.375" />
+        <EntityTypeShape EntityType="Model.tblDBError" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblDBUpgradeHistory" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblDerivedHierarchy" Width="1.5" PointX="3" PointY="73.25" />
+        <EntityTypeShape EntityType="Model.tblDerivedHierarchyDetail" Width="1.5" PointX="5.25" PointY="72.75" />
+        <EntityTypeShape EntityType="Model.tblEntity" Width="1.5" PointX="3" PointY="39.25" />
+        <EntityTypeShape EntityType="Model.tblErrorCodesMapping" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblEvent" Width="1.5" PointX="5.25" PointY="41.75" />
+        <EntityTypeShape EntityType="Model.tblExternalSystem" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.tblFile" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model.tblHierarchy" Width="1.5" PointX="5.25" PointY="59.5" />
+        <EntityTypeShape EntityType="Model.tblIndex" Width="1.5" PointX="5.25" PointY="64" />
+        <EntityTypeShape EntityType="Model.tblList" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.tblListRelationship" Width="1.5" PointX="5.25" PointY="79" />
+        <EntityTypeShape EntityType="Model.tblListRelationshipType" Width="1.5" PointX="3" PointY="79.5" />
+        <EntityTypeShape EntityType="Model.tblLocalizedString" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.tblModel" Width="1.5" PointX="0.75" PointY="46" />
+        <EntityTypeShape EntityType="Model.tblModelVersion" Width="1.5" PointX="8.25" PointY="58.625" />
+        <EntityTypeShape EntityType="Model.tblModelVersionFlag" Width="1.5" PointX="3" PointY="68.75" />
+        <EntityTypeShape EntityType="Model.tblNotificationQueue" Width="1.5" PointX="14.5" PointY="49.875" />
+        <EntityTypeShape EntityType="Model.tblNotificationUser" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="Model.tblSecurityAccessControl" Width="1.5" PointX="3" PointY="58.75" />
+        <EntityTypeShape EntityType="Model.tblSecurityObject" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblSecurityPrivilege" Width="1.5" PointX="0.75" PointY="52" />
+        <EntityTypeShape EntityType="Model.tblSecurityPrivilegeFunctional" Width="1.5" PointX="0.75" PointY="59.875" />
+        <EntityTypeShape EntityType="Model.tblSecurityRole" Width="1.5" PointX="0.75" PointY="55" />
+        <EntityTypeShape EntityType="Model.tblSecurityRoleAccess" Width="1.5" PointX="3" PointY="49.125" />
+        <EntityTypeShape EntityType="Model.tblSecurityRoleAccessFunctional" Width="1.5" PointX="3" PointY="54.125" />
+        <EntityTypeShape EntityType="Model.tblSecurityRoleAccessMember" Width="1.5" PointX="15.5" PointY="56.375" />
+        <EntityTypeShape EntityType="Model.tblStgBatch" Width="1.5" PointX="5.25" PointY="29.875" />
+        <EntityTypeShape EntityType="Model.tblStgErrorDetail" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.tblSubscriptionView" Width="1.5" PointX="12.5" PointY="55.625" />
+        <EntityTypeShape EntityType="Model.tblSyncRelationship" Width="1.5" PointX="8.25" PointY="41" />
+        <EntityTypeShape EntityType="Model.tblSystem" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.tblSystemSetting" Width="1.5" PointX="13" PointY="1" />
+        <EntityTypeShape EntityType="Model.tblSystemSettingGroup" Width="1.5" PointX="10.625" PointY="5.125" />
+        <EntityTypeShape EntityType="Model.tblUser" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.tblUserGroup" Width="1.5" PointX="3.75" PointY="19.125" />
+        <EntityTypeShape EntityType="Model.tblUserGroupAssignment" Width="1.5" PointX="6" PointY="10.25" />
+        <EntityTypeShape EntityType="Model.tblUserPreference" Width="1.5" PointX="3" PointY="15.375" />
+        <EntityTypeShape EntityType="Model.tblDataQualityOperationsState" Width="1.5" PointX="5.75" PointY="14.75" />
+        <AssociationConnector Association="Model.FK_TeachingAssignments_ToCourse" />
+        <AssociationConnector Association="Model.FK_TeachingAssignments_ToInstructor" />
+        <AssociationConnector Association="Model.FK_TeachingAssignments_ToTerm" />
+        <AssociationConnector Association="Model.fk_tblAttribute_tblAttribute_FilterParentAttribute_ID" />
+        <AssociationConnector Association="Model.fk_tblAttribute_tblAttribute_Source_ID" />
+        <AssociationConnector Association="Model.fk_tblAttribute_tblDerivedHierarchyDetail_FilterHierarchyDetail_ID" />
+        <AssociationConnector Association="Model.fk_tblAttribute_tblEntity_DomainEntity_ID" />
+        <AssociationConnector Association="Model.fk_tblAttribute_tblEntity_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblAttributeGroupDetail_tblAttribute_AttributeID" />
+        <AssociationConnector Association="Model.fk_tblDerivedHierarchyDetail_ManyToManyChildAttribute_ID_tblAttribute_ID" />
+        <AssociationConnector Association="Model.fk_tblAttributeGroup_tblEntity_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblAttributeGroupDetail_tblAttribute_AttributeGroup_ID" />
+        <AssociationConnector Association="Model.fk_tblBRBusinessRule_tblEntity_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblBRLogicalOperatorGroup_tblBRBusinessRule_BusinessRule_ID" />
+        <AssociationConnector Association="Model.fk_tblBRItem_tblBRItemTypeAppliesTo_BRItemAppliesTo_ID" />
+        <AssociationConnector Association="Model.fk_tblBRItem_tblLogicalOperatorGroup_BRLogicalOperatorGroup_ID" />
+        <AssociationConnector Association="Model.fk_tblBRItemProperties_tblBRItem_BRItem_ID" />
+        <AssociationConnector Association="Model.fk_tblBRItemTypeAppliesTo_tblListRelationship_ApplyTo_ID" />
+        <AssociationConnector Association="Model.FK_tblCodeGenInfo_tblEntity" />
+        <AssociationConnector Association="Model.fk_tblDerivedHierarchy_tblModel_Model_ID" />
+        <AssociationConnector Association="Model.fk_tblDerivedHierarchyDetail_tblDerivedHierarchy_DerivedHierarchy_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessMember_tblHierarchy_DerivedHierarchy_ID" />
+        <AssociationConnector Association="Model.fk_tblSubscriptionView_tblDerivedHierarchy" />
+        <AssociationConnector Association="Model.fk_tblEntity_tblModel_Model_ID" />
+        <AssociationConnector Association="Model.fk_tblEvent_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblHierarchy_tblEntity_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblIndex_tblEntity_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessMember_tblEntity_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblStgBatch_tblEntity_Entity_ID" />
+        <AssociationConnector Association="Model.fk_tblSubscriptionView_tblEntity" />
+        <AssociationConnector Association="Model.fk_tblSyncRelationship_tblEntity_SourceEntity_ID" />
+        <AssociationConnector Association="Model.fk_tblSyncRelationship_tblEntity_TargetEntity_ID" />
+        <AssociationConnector Association="Model.fk_tblEvent_Version_ID" />
+        <AssociationConnector Association="Model.fk_tblFile_tblFile_Source_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessMember_tblHierarchy_ExplicitHierarchy_ID" />
+        <AssociationConnector Association="Model.fk_tblListRelationship_tblListRelationshipType_ListRelationshipType_ID" />
+        <AssociationConnector Association="Model.fk_tblModelVersion_tblModel_Model_ID" />
+        <AssociationConnector Association="Model.fk_tblModelVersionFlag_tblModel_Model_ID" />
+        <AssociationConnector Association="Model.fk_tblNotificationQueue_tblModel_Model_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccess_tblModel_Model_ID" />
+        <AssociationConnector Association="Model.fk_tblSubscriptionView_tblModel" />
+        <AssociationConnector Association="Model.fk_tblModelVersion_tblModelVersionFlag_VersionFlag_ID" />
+        <AssociationConnector Association="Model.fk_tblNotificationQueue_tblModelVersion_Version_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessMember_tblModelVersion_Version_ID" />
+        <AssociationConnector Association="Model.fk_tblSubscriptionView_tblModelVersion" />
+        <AssociationConnector Association="Model.fk_tblSyncRelationship_tblVersion_SourceVersion_ID" />
+        <AssociationConnector Association="Model.fk_tblSyncRelationship_tblVersion_TargetVersion_ID" />
+        <AssociationConnector Association="Model.fk_tblNotificationUsers_tblUser_UserID" />
+        <AssociationConnector Association="Model.fk_tblSecurityAccessControl_tblSecurityRole_Role_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccess_tblSecurityPrivilege_Privilege_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessMember_tblSecurityPrivilege_Privilege_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessFunctional_tblSecurityFunctionalPrivilege_FunctionalPrivilege_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccess_tblSecurityRole_Role_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessFunctional_tblSecurityRole_Role_ID" />
+        <AssociationConnector Association="Model.fk_tblSecurityRoleAccessMember_tblSecurityRole_Role_ID" />
+        <AssociationConnector Association="Model.fk_tblSystemSetting_tblSystemSettingGroup" />
+        <AssociationConnector Association="Model.fk_tblUserGroupAssignment_tblUser_UserID" />
+        <AssociationConnector Association="Model.fk_tblUserPreference_tblUserPreference_User_ID" />
+        <AssociationConnector Association="Model.fk_tblUserGroupAssignment_tblUserGroup_UserGroupID" />
+        <EntityTypeShape EntityType="Model.Registration1" Width="1.5" PointX="9.375" PointY="0.75" />
+        <AssociationConnector Association="Model.FK_Course" />
+        <AssociationConnector Association="Model.FK_Student" />
+        <AssociationConnector Association="Model.FK_StudyTerm" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
